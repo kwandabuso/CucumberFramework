@@ -1,0 +1,190 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-03-07T16:48:59.110Z",
+        "line": 3,
+        "name": "Login with right username and password",
+        "description": "",
+        "id": "@addemployeelist;login-with-right-username-and-password",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7987921700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am on a login page",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iAmOnALoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 532000300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter the following details for credentials",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iEnterTheFollowingDetailsForCredentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1451429000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click a login button",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iClickALoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 42599800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I should be logged in",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iShouldBeLoggedIn()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-07T16:49:09.159Z",
+        "line": 10,
+        "name": "Navigate to employee list page",
+        "description": "",
+        "id": "@addemployeelist;navigate-to-employee-list-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8995700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I am on the home page",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iAmOnTheHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 828940400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I click on Employee List",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iClickOnEmployeeList()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 49296400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "A list of employees is displayed",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.aListOfEmployeesIsDisplayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-07T16:49:10.054Z",
+        "line": 16,
+        "name": "navigate to add new employee page",
+        "description": "",
+        "id": "@addemployeelist;navigate-to-add-new-employee-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7998900,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I am on the employee list page",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iAmOnTheEmployeeListPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1179824000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I click the add new button",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iClickTheAddNewButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 681867500,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I enter all the field details",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iEnterAllTheFieldDetails()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1388720000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I click the create button",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.iClickTheCreateButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 38999800,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "A new employee is displayed on the list",
+            "match": {
+              "location": "FrontendAutomation.Steps.Steps.MyStepdefs.aNewEmployeeIsDisplayedOnTheList()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "@AddEmployeelist",
+    "description": "",
+    "id": "@addemployeelist",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Features/AddEmployee.feature",
+    "tags": []
+  }
+]
