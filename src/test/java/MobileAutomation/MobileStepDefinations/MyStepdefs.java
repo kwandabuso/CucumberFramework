@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 
 public class MyStepdefs extends FunctionLibrary
 {
+    /*
     PageElements elements = new PageElements();
 
     @Given("I am on the uamp application")
@@ -54,4 +55,6 @@ public class MyStepdefs extends FunctionLibrary
         mobiIsElementDisplayedByID(elements.songsListId());
 
     }
+
+     */
 }

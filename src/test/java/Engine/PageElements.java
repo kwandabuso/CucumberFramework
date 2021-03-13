@@ -4,77 +4,82 @@ public class PageElements {
 
     public static String txtUsernameID()
     {
-        return "UserName";
+        return "user-name";
     }
 
     public static String txtPasswordID()
     {
-        return "Password";
+        return "password";
     }
 
     public static String btnLoginID()
     {
-        return "loginLink";
+        return "login-button";
     }
 
-    public static String txtLogoutXpath()
+    public static String btnAddToCartXpath()
     {
-        return "//a[contains(@href,'logout')]";
+        return "(//button[@class= 'btn_primary btn_inventory'])[1]";
+    }
+
+    public static String CartItemsXpath()
+    {
+        return "//span[@class='fa-layers-counter shopping_cart_badge']";
     }
 
 
-    public static String btnLoginSubmitXpath()
+    public static String btnCartXpath()
     {
-        return "//input[@value='Log in']";
+        return "//div[@id='shopping_cart_container']//a";
     }
 
-    public static String lnkEmployeeListXpath()
+    public static String lblInventoryItemPriceXpath()
     {
-        return "//div[@class='container']//a[text()='Employee List']";
+        return "//div[@class='inventory_item_price']";
     }
 
-    public static String btnCreateNewXpath()
+    public static String btnCheckoutXpath()
     {
-        return "//a[@href='/Employee/Create']";
+        return "//a[@class='btn_action checkout_button']";
     }
 
     public static String txtNameID()
     {
-        return "Name";
+        return "first-name";
     }
-    public static String txtSalaryID()
+    public static String txtLastNameID()
     {
-        return "Salary";
+        return "last-name";
     }
-    public static String txtDurationWorkedID()
+    public static String txtPostalCode()
     {
-        return "DurationWorked";
-    }
-
-    public static String txtGradeID()
-    {
-        return "Grade";
+        return "postal-code";
     }
 
-    public static String txtEmailID()
+    public static String btnContinueXpath()
     {
-        return "Email";
+        return "//input[@value='CONTINUE']";
     }
-    public static String btnCreateXpath()
+    public static String lstCartItemXpath()
     {
-        return "//input[@value='Create']";
+        return "//div[@class='cart_item']";
     }
-    public static String tblEmployeeListXpath()
+    public static String btnFinishXpath()
     {
-        return "//table";
+        return "//a[@class='btn_action cart_button']";
     }
-    public static String frmAddEmployeepath()
+    public static String lblErrorXpath()
     {
-        return "//form[@action='/Employee/Create']";
+        return "//h3[@data-test='error']";
     }
-    public static String newEmployeeByXpath(String Email)
+    public static String hdrProductsXpath()
     {
-        return "//td[contains(text(),'"+Email+"')]";
+        return "//div[@class='product_label']";
+    }
+
+    public static String imgPonyExpressXpath()
+    {
+        return "//img[@class='pony_express']";
     }
 
 
@@ -82,6 +87,7 @@ public class PageElements {
     {
         return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.ImageView[3]";
     }
+
     public static String AlbumsListId()
     {
         return "com.example.android.uamp.next:id/list";
@@ -90,9 +96,6 @@ public class PageElements {
     {
         return "com.example.android.uamp.next:id/albumArt";
     }
-
-
-
 
     public static String jazzAndBluesXpath()
     {
@@ -103,5 +106,6 @@ public class PageElements {
     {
         return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]";
     }
+
 
 }

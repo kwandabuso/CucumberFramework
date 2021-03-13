@@ -2,6 +2,7 @@ package Engine;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.cucumber.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,16 +19,19 @@ public class FunctionLibrary {
     WebDriver driver = null;
     static AndroidDriver androidDriver;
 
+
     public Boolean setup()
     {
         try{
 
             var workingDirectory = System.getProperty("user.dir");
             System.setProperty("webdriver.chrome.driver",workingDirectory+"\\chromedriver\\chromedriver.exe");
+
             driver = new ChromeDriver();
 
-            String baseUrl = "http://eaapp.somee.com/";
-            String expectedTitle = "Home - Execute Automation Employee App";
+
+            String baseUrl = "https://www.saucedemo.com/";
+            String expectedTitle = "Swag Labs";
             String actualTitle = "";
             // launch Fire fox and direct it to the Base URL
             driver.manage().window().maximize();
@@ -44,27 +49,25 @@ public class FunctionLibrary {
         return false;
     }
 
-        public void Mobilesetup() throws MalformedURLException {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
+    public void Mobilesetup() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
 
-            capabilities.setCapability("deviceName","Android Emulator");
-            capabilities.setCapability("platformName","Android");
-            capabilities.setCapability("appPackage","com.example.android.uamp.next");
-            capabilities.setCapability("appActivity","com.example.android.uamp.MainActivity");
-            capabilities.setCapability("automationName","Appium");
+        capabilities.setCapability("deviceName","Android Emulator");
+        capabilities.setCapability("platformName","Android");
+        capabilities.setCapability("appPackage","com.example.android.uamp.next");
+        capabilities.setCapability("appActivity","com.example.android.uamp.MainActivity");
+        capabilities.setCapability("automationName","Appium");
 
-            String url = "http://0.0.0.0:4723/wd/hub";
-            androidDriver = new AndroidDriver(new URL(url), capabilities);
-            System.out.println("application started....");
-        }
+        String url = "http://0.0.0.0:4723/wd/hub";
+        androidDriver = new AndroidDriver(new URL(url), capabilities);
+        System.out.println("application started....");
+    }
 
-        public String getTitle()
-        {
+    public String getTitle()
+    {
 
-            String actualTitle = "";
-            // launch Fire fox and direct it to the Base URL
-           return GlobalVariables.driver.getTitle().trim();
-        }
+       return GlobalVariables.driver.getTitle().trim();
+    }
 
     public Boolean waitforElementTobeDisplayedByID(String elementID) {
         try {
@@ -88,16 +91,16 @@ public class FunctionLibrary {
 
     public Boolean waitforElementTobeDisplayed(String elementXpath) {
         try {
+            new WebDriverWait(GlobalVariables.driver, 15).until(
+                    webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 
-            for (int i = 0; i < 10; i++) {
+            var element = driver.findElement(By.xpath(elementXpath));
 
-                var element = driver.findElement(By.xpath(elementXpath));
+            if (element.isDisplayed())
+                return true;
 
-                if (element.isDisplayed())
-                    return true;
+            GlobalVariables.driver.wait(1000);
 
-                GlobalVariables.driver.wait(1000);
-            }
 
         } catch (Exception ex) {
             System.out.println(ex);
@@ -109,6 +112,7 @@ public class FunctionLibrary {
     public Boolean iselementDisplayedByXpath(String elementXpath) {
             try {
 
+                waitforElementTobeDisplayed(elementXpath);
                 var element = GlobalVariables.driver.findElement(By.xpath(elementXpath));
 
                 if (element.isDisplayed())
@@ -141,6 +145,7 @@ public class FunctionLibrary {
         try{
             waitforElementTobeDisplayedByID(elementID);
             var element = GlobalVariables.driver.findElement(By.id(elementID));
+            element.clear();
             element.sendKeys(text);
             return true;
 
