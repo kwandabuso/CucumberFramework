@@ -9,52 +9,56 @@ import io.cucumber.java.en.When;
 
 import java.net.MalformedURLException;
 
+import static org.testng.Assert.assertTrue;
+
 public class MyStepdefs extends FunctionLibrary
 {
-    /*
+
     PageElements elements = new PageElements();
 
     @Given("I am on the uamp application")
     public void iAmOnMyPhone() throws MalformedURLException {
-        Mobilesetup();
-    }
-
-    @When("I click on Albums")
-    public void iOpenTheUampApplication() {
-        mobiClickElementByXpath(elements.AlbumIdXpath());
-    }
-
-    @Then("A list of albums must be displayed")
-    public void iShouldSeeTheHomeScreen() {
-
+        assertTrue(Mobilesetup());
     }
 
     @Then("then albums must be displayed")
     public void thenAlbumsMustBeDisplayed() {
-        mobiIsElementDisplayedByID(elements.AlbumsListId());
+        assertTrue(mobiIsElementDisplayedByID(elements.jazzAndBluesXpath()));
 
     }
 
-    @Given("I am on the albums menu")
-    public void iAmOnTheAlbumsMenu() {
-        mobiIsElementDisplayedByID(elements.AlbumsListId());
-    }
 
     @When("I click on jazz and blues")
     public void iClickOnJazzAndBlues() {
-        mobiClickElementByXpath(elements.jazzAndBluesXpath());
+
+        assertTrue(mobiClickElementByXpath(elements.jazzAndBluesXpath()));
     }
 
     @And("I select A song")
     public void iSelectASong() {
-        mobiClickElementByXpath(elements.theMessanger());
+
+        assertTrue(mobiClickElementByXpath(elements.songXpath()));
     }
 
     @Then("the selected song must play")
     public void theSelectedSongMustPlay() {
-        mobiIsElementDisplayedByID(elements.songsListId());
+        assertTrue(mobiIsElementDisplayedByID(elements.playingSongID()));
 
     }
 
-     */
+
+    @Given("I am on the genres menu")
+    public void iAmOnTheGenresMenu() {
+
+    }
+
+    @When("I click on genres")
+    public void iClickOnGenres() {
+        assertTrue(mobiClickElementByXpath(elements.genresAccessXpath()));
+    }
+
+    @Then("then a list of available genres is displayed")
+    public void thenAListOfAvailableGenresIsDisplayed() {
+        assertTrue(mobiIsElementDisplayedByID(elements.genresListID()));
+    }
 }

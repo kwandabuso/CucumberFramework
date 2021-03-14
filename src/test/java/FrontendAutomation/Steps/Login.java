@@ -57,12 +57,12 @@ public class Login extends FunctionLibrary
     @When("I enter a valid username and an invalid password")
     public void iEnterAValidUsernameAndAnInvalidPassword() throws IOException {
         assertTrue(enterTextbyID(PageElements.txtUsernameID(), engine.readFromExcel("username")));
-        assertTrue(enterTextbyID(PageElements.txtPasswordID(), engine.readFromExcel("test")));
+        assertTrue(enterTextbyID(PageElements.txtPasswordID(), engine.readFromExcel("InvalidPassword")));
     }
 
     @When("I enter an invalid username and a valid password")
     public void iEnterAnInvalidUsernameAndAValidPassword() throws IOException {
-        assertTrue(enterTextbyID(PageElements.txtUsernameID(), engine.readFromExcel("test")));
+        assertTrue(enterTextbyID(PageElements.txtUsernameID(), engine.readFromExcel("InvalidUserName")));
         assertTrue(enterTextbyID(PageElements.txtPasswordID(), engine.readFromExcel("password")));
     }
 

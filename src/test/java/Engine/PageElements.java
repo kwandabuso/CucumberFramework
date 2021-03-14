@@ -79,33 +79,38 @@ public class PageElements {
 
     public static String imgPonyExpressXpath()
     {
-        return "//img[@class='pony_express']";
+        return "//div[@id='checkout_complete_container']";
     }
 
 
-    public static String AlbumIdXpath()
+    public static String genresAccessXpath()
     {
-        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.ImageView[3]";
-    }
-
-    public static String AlbumsListId()
-    {
-        return "com.example.android.uamp.next:id/list";
-    }
-    public static String songsListId()
-    {
-        return "com.example.android.uamp.next:id/albumArt";
+        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout";
     }
 
     public static String jazzAndBluesXpath()
     {
-        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]";
+        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout[3]";
     }
 
-    public static String theMessanger()
+    public static String songXpath()
     {
-        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]";
+        return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout[1]";
     }
+    public static String playingSongID()
+    {
+        return "com.instantappsample.uamp:id/fragment_playback_controls";
+    }
+    public static String songsListID()
+    {
+        return "com.instantappsample.uamp:id/list_view";
+    }
+
+    public static String genresListID()
+    {
+        return "com.instantappsample.uamp:id/list_view";
+    }
+
 
 
 }

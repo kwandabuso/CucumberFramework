@@ -15,7 +15,10 @@ public class Engine {
     public static String readFromExcel(String header) throws IOException {
 
         try {
-            File file = new File("C:\\Users\\Kwanda Buso\\Documents\\NetBeansProjects\\mavenproject1\\test.xlsx");   //creating a new file instance
+            //File file = new File("C:\\Users\\Kwanda Buso\\Documents\\NetBeansProjects\\Files\\TestData.xlsx");
+            var workingDirectory = System.getProperty("user.dir");//creating a new file instance
+            var file = workingDirectory+"\\Files\\TestData.xlsx";
+
             FileInputStream fis = new FileInputStream(file);   //obtaining bytes from the file
             //creating Workbook instance that refers to .xlsx file
             XSSFWorkbook wb = new XSSFWorkbook(fis);

@@ -2,7 +2,6 @@ package Engine;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.cucumber.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -49,18 +47,29 @@ public class FunctionLibrary {
         return false;
     }
 
-    public void Mobilesetup() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+    public boolean Mobilesetup() throws MalformedURLException {
+        try
+        {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("deviceName","Android Emulator");
-        capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("appPackage","com.example.android.uamp.next");
-        capabilities.setCapability("appActivity","com.example.android.uamp.MainActivity");
-        capabilities.setCapability("automationName","Appium");
+            capabilities.setCapability("deviceName","Android Emulator");
+            capabilities.setCapability("platformName","Android");
+            capabilities.setCapability("appPackage","com.instantappsample.uamp");
+            capabilities.setCapability("appActivity","com.example.android.uamp.ui.MusicPlayerActivity");
+            capabilities.setCapability("automationName","Appium");
 
-        String url = "http://0.0.0.0:4723/wd/hub";
-        androidDriver = new AndroidDriver(new URL(url), capabilities);
-        System.out.println("application started....");
+            String url = "http://0.0.0.0:4723/wd/hub";
+            androidDriver = new AndroidDriver(new URL(url), capabilities);
+            System.out.println("application started....");
+            return true;
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
+            return false;
+        }
+
     }
 
     public String getTitle()
@@ -83,7 +92,9 @@ public class FunctionLibrary {
             }
 
         } catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
 
         }
         return false;
@@ -94,16 +105,20 @@ public class FunctionLibrary {
             new WebDriverWait(GlobalVariables.driver, 15).until(
                     webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 
-            var element = driver.findElement(By.xpath(elementXpath));
+            for (int i = 0; i < 10; i++) {
+                GlobalVariables.driver.wait(2000);
+                var element = driver.findElement(By.xpath(elementXpath));
 
-            if (element.isDisplayed())
-                return true;
+                if (element.isDisplayed() && element.isEnabled())
+                    return true;
 
-            GlobalVariables.driver.wait(1000);
-
+                GlobalVariables.driver.wait(1000);
+            }
 
         } catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
 
         }
         return false;
@@ -119,7 +134,9 @@ public class FunctionLibrary {
                     return true;
 
             } catch (Exception ex) {
-                System.out.println(ex);
+                System.out.println(ex.getCause());
+                System.out.println(ex.getMessage());
+                System.out.println(ex.getStackTrace());
 
             }
             return false;
@@ -135,7 +152,9 @@ public class FunctionLibrary {
 
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
             return false;
         }
     }
@@ -151,7 +170,9 @@ public class FunctionLibrary {
 
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
             return false;
         }
     }
@@ -166,7 +187,9 @@ public class FunctionLibrary {
 
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
             return false;
         }
     }
@@ -181,7 +204,9 @@ public class FunctionLibrary {
 
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
             return false;
         }
     }
@@ -208,7 +233,7 @@ public class FunctionLibrary {
         }
     }
 
-    public static void mobiClickElementByXpath(String element)
+    public static Boolean mobiClickElementByXpath(String element)
     {
         try
         {
@@ -221,13 +246,14 @@ public class FunctionLibrary {
 
                 myElement.click();
             }
+            return true;
         }
         catch(Exception ex)
         {
             System.out.println(ex.getCause());
             System.out.println(ex.getMessage());
             System.out.println(ex.getStackTrace());
-
+            return false;
         }
     }
 
@@ -236,7 +262,7 @@ public class FunctionLibrary {
         try
         {
 
-            MobileElement element = (MobileElement) androidDriver.findElementByXPath(myElement);
+            MobileElement element = (MobileElement) androidDriver.findElementById(myElement);
             Thread.sleep(2000);
             if(element.isDisplayed()) {
                 return true;
