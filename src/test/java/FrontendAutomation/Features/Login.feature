@@ -1,7 +1,5 @@
 Feature: login to sauce demo
 
-
-
 Scenario: login entering no fields
   Given I am on the sauce demo login page
   When click the login button
