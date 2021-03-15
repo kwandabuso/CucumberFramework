@@ -3,490 +3,116 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-03-14T15:26:02.132Z",
-        "line": 5,
-        "name": "login entering no fields",
-        "description": "",
-        "id": "login-to-sauce-demo;login-entering-no-fields",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 30999500,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I am on the sauce demo login page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iAmOnTheSauceDemoLoginPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 181002100,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "click the login button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.clickTheLoginButton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 67997800,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "an error message must be displayed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.anErrorMessageMustBeDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:02.451Z",
-        "line": 10,
-        "name": "login entering a valid username and an invalid password",
-        "description": "",
-        "id": "login-to-sauce-demo;login-entering-a-valid-username-and-an-invalid-password",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 8001800,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I am on the sauce demo login page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iAmOnTheSauceDemoLoginPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1316775300,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I enter a valid username and an invalid password",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iEnterAValidUsernameAndAnInvalidPassword()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 91037800,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "click the login button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.clickTheLoginButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40964800,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "an error message must be displayed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.anErrorMessageMustBeDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:03.919Z",
-        "line": 16,
-        "name": "login entering an invalid username and a valid password",
-        "description": "",
-        "id": "login-to-sauce-demo;login-entering-an-invalid-username-and-a-valid-password",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 6000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I am on the sauce demo login page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iAmOnTheSauceDemoLoginPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 373478300,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I enter an invalid username and a valid password",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iEnterAnInvalidUsernameAndAValidPassword()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 72996200,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "click the login button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.clickTheLoginButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40999600,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "an error message must be displayed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.anErrorMessageMustBeDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:04.423Z",
-        "line": 22,
-        "name": "login using the right credentials",
-        "description": "",
-        "id": "login-to-sauce-demo;login-using-the-right-credentials",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 9001600,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "I am on the sauce demo login page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iAmOnTheSauceDemoLoginPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 384002900,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "I enter a valid password and a valid username",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iEnterAValidPasswordAndAValidUsername()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 143799800,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "click the login button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.clickTheLoginButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 53144700,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "I must be logged in",
-            "match": {
-              "location": "FrontendAutomation.Steps.Login.iMustBeLoggedIn()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "login to sauce demo",
-    "description": "",
-    "id": "login-to-sauce-demo",
-    "keyword": "Feature",
-    "uri": "file:src/test/java/FrontendAutomation/Features/Login.feature",
-    "tags": []
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "start_timestamp": "2021-03-14T15:26:05.027Z",
+        "start_timestamp": "2021-03-15T08:42:11.707Z",
         "line": 3,
-        "name": "add Items to cart",
+        "name": "navigate to albums",
         "description": "",
-        "id": "login-to-sauce-demo;add-items-to-cart",
+        "id": "@addemployeelist;navigate-to-albums",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 52972500,
+              "duration": 17165982800,
               "status": "passed"
             },
             "line": 4,
-            "name": "I am on the sauce demo products page",
+            "name": "I am on the uamp application",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iAmOnTheSauceDemoProductsPage()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iAmOnMyPhone()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 93998100,
+              "duration": 6979998700,
               "status": "passed"
             },
             "line": 5,
-            "name": "I select an item",
+            "name": "I click on genres",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iSelectAnItem()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iClickOnGenres()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 56003000,
+              "duration": 2175002800,
               "status": "passed"
             },
             "line": 6,
-            "name": "the Item must be added to the cart",
+            "name": "then a list of available genres is displayed",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.theItemMustBeAddedToTheCart()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.thenAListOfAvailableGenresIsDisplayed()"
             },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2021-03-14T15:26:05.246Z",
-        "line": 9,
-        "name": "view cart items",
+        "start_timestamp": "2021-03-15T08:42:38.084Z",
+        "line": 8,
+        "name": "play my favourite music",
         "description": "",
-        "id": "login-to-sauce-demo;view-cart-items",
+        "id": "@addemployeelist;play-my-favourite-music",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 39000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am on the genres menu",
+            "match": {
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iAmOnTheGenresMenu()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5611999000,
               "status": "passed"
             },
             "line": 10,
-            "name": "I am on the sauce demo products page",
+            "name": "I click on jazz and blues",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iAmOnTheSauceDemoProductsPage()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iClickOnJazzAndBlues()"
             },
-            "keyword": "Given "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 120002400,
+              "duration": 6000117700,
               "status": "passed"
             },
             "line": 11,
-            "name": "I click on the cart icon",
+            "name": "I select A song",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iClickOnTheCartIcon()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 49999900,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "the cart is displayed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.theCartIsDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:05.462Z",
-        "line": 15,
-        "name": "checkout my cart",
-        "description": "",
-        "id": "login-to-sauce-demo;checkout-my-cart",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 34001300,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I am on the cart page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iAmOnTheCartPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 88998300,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click on the checkout button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iClickOnTheCheckoutButton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "your information page is displayed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.yourInformationPageIsDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:05.599Z",
-        "line": 20,
-        "name": "enter your information",
-        "description": "",
-        "id": "login-to-sauce-demo;enter-your-information",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I am on the your information page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iAmOnTheYourInformationPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 500627900,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I enter all the fields",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iEnterAllTheFields()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 103997100,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "click on the continue button",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.clickOnTheContinueButton()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iSelectASong()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 44989200,
+              "duration": 3484228800,
               "status": "passed"
             },
-            "line": 24,
-            "name": "Checkout Overview page is displayed",
+            "line": 12,
+            "name": "the selected song must play",
             "match": {
-              "location": "FrontendAutomation.Steps.Checkout.checkoutOverviewPageIsDisplayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-14T15:26:06.258Z",
-        "line": 26,
-        "name": "finish your order",
-        "description": "",
-        "id": "login-to-sauce-demo;finish-your-order",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "I am on the overview page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iAmOnTheOverviewPage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 90997700,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "I click on the Finish Page",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.iClickOnTheFinishPage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 47010500,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "My order must be placed",
-            "match": {
-              "location": "FrontendAutomation.Steps.Checkout.myOrderMustBePlaced()"
+              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.theSelectedSongMustPlay()"
             },
             "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "login to sauce demo",
+    "name": "@AddEmployeelist",
     "description": "",
-    "id": "login-to-sauce-demo",
+    "id": "@addemployeelist",
     "keyword": "Feature",
-    "uri": "file:src/test/java/FrontendAutomation/Features/checkout.feature",
+    "uri": "file:src/test/java/MobileAutomation/Features/playMusic.feature",
     "tags": []
   }
 ]
