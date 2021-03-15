@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-03-15T08:42:11.707Z",
+        "start_timestamp": "2021-03-15T08:55:40.197Z",
         "line": 3,
         "name": "navigate to albums",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 17165982800,
+              "duration": 13508009300,
               "status": "passed"
             },
             "line": 4,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 6979998700,
+              "duration": 8339996900,
               "status": "passed"
             },
             "line": 5,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 2175002800,
+              "duration": 2112004200,
               "status": "passed"
             },
             "line": 6,
@@ -50,7 +50,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-15T08:42:38.084Z",
+        "start_timestamp": "2021-03-15T08:56:04.225Z",
         "line": 8,
         "name": "play my favourite music",
         "description": "",
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 5611999000,
+              "duration": 6375001000,
               "status": "passed"
             },
             "line": 10,
@@ -83,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 6000117700,
+              "duration": 5720773800,
               "status": "passed"
             },
             "line": 11,
@@ -95,7 +95,7 @@
           },
           {
             "result": {
-              "duration": 3484228800,
+              "duration": 3377209900,
               "status": "passed"
             },
             "line": 12,

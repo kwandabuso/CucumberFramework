@@ -1,4 +1,4 @@
-Feature: @AddEmployeelist
+Feature: @play my favourite song
 
 Scenario: navigate to albums
   Given I am on the uamp application
