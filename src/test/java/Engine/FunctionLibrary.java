@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class FunctionLibrary {
-    WebDriver driver = null;
+        WebDriver driver = null;
     static AndroidDriver androidDriver;
 
 
@@ -181,7 +181,7 @@ public class FunctionLibrary {
     {
         try{
             waitforElementTobeDisplayed(elementXpath);
-            var element = GlobalVariables.driver.findElement(By.xpath(elementXpath));
+            var element = GlobalVariables.driver.findElement(By.xpath("//a[text()=\"Today's Deals\"]"));
             element.click();
             return true;
 
