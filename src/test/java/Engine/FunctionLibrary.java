@@ -8,13 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.function.Function;
 
 public class FunctionLibrary {
-        WebDriver driver = null;
+    WebDriver driver = null;
     static AndroidDriver androidDriver;
 
 
@@ -75,17 +77,25 @@ public class FunctionLibrary {
     public String getTitle()
     {
 
-       return GlobalVariables.driver.getTitle().trim();
+        return GlobalVariables.driver.getTitle().trim();
+    }
+
+    public void waitForPageLoad() {
+
+        new WebDriverWait(GlobalVariables.driver, 10).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
     public Boolean waitforElementTobeDisplayedByID(String elementID) {
         try {
+            new WebDriverWait(GlobalVariables.driver, 15).until(
+                    webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 
             for (int i = 0; i < 10; i++) {
-
+                GlobalVariables.driver.wait(1000);
                 var element = GlobalVariables.driver.findElement(By.id(elementID));
 
-                if (element.isDisplayed())
+                if (element.isDisplayed() && element.isEnabled())
                     return true;
 
                 GlobalVariables.driver.wait(1000);
@@ -125,22 +135,22 @@ public class FunctionLibrary {
     }
 
     public Boolean iselementDisplayedByXpath(String elementXpath) {
-            try {
+        try {
 
-                waitforElementTobeDisplayed(elementXpath);
-                var element = GlobalVariables.driver.findElement(By.xpath(elementXpath));
+            waitforElementTobeDisplayed(elementXpath);
+            var element = GlobalVariables.driver.findElement(By.xpath(elementXpath));
 
-                if (element.isDisplayed())
-                    return true;
+            if (element.isDisplayed())
+                return true;
 
-            } catch (Exception ex) {
-                System.out.println(ex.getCause());
-                System.out.println(ex.getMessage());
-                System.out.println(ex.getStackTrace());
+        } catch (Exception ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
 
-            }
-            return false;
         }
+        return false;
+    }
 
     public boolean enterTextbyXpath(String elementXpath, String text)
     {
@@ -162,6 +172,7 @@ public class FunctionLibrary {
     public boolean enterTextbyID(String elementID, String text)
     {
         try{
+
             waitforElementTobeDisplayedByID(elementID);
             var element = GlobalVariables.driver.findElement(By.id(elementID));
             element.clear();
@@ -181,7 +192,7 @@ public class FunctionLibrary {
     {
         try{
             waitforElementTobeDisplayed(elementXpath);
-            var element = GlobalVariables.driver.findElement(By.xpath("//a[text()=\"Today's Deals\"]"));
+            var element = GlobalVariables.driver.findElement(By.xpath(elementXpath));
             element.click();
             return true;
 
