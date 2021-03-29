@@ -249,12 +249,11 @@ public class FunctionLibrary {
         try
         {
             mobiWaitForElementToBeDisplayedByXpath(element);
-
+            Thread.sleep(2000);
             MobileElement myElement = (MobileElement) androidDriver.findElementByXPath(element);
 
             if(myElement.isDisplayed() && myElement.isEnabled())
             {
-
                 myElement.click();
             }
             return true;
@@ -294,11 +293,11 @@ public class FunctionLibrary {
     {
         try
         {
-            WebDriverWait wait = new WebDriverWait(androidDriver, 10);
+            WebDriverWait wait = new WebDriverWait(androidDriver, 15);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath(myElement)));// instead of id u can use cssSelector or xpath of ur element.
 
             MobileElement element = (MobileElement) androidDriver.findElementByXPath(myElement);
-            Thread.sleep(2000);
+
             if(!element.isDisplayed());
             {
                 for(int i =0; i < 5; i++)

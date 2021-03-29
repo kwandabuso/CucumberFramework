@@ -3,17 +3,17 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-03-15T08:55:40.197Z",
+        "start_timestamp": "2021-03-24T21:00:16.640Z",
         "line": 3,
         "name": "navigate to albums",
         "description": "",
-        "id": "@addemployeelist;navigate-to-albums",
+        "id": "@play-my-favourite-song;navigate-to-albums",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 13508009300,
+              "duration": 11329287900,
               "status": "passed"
             },
             "line": 4,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 8339996900,
+              "duration": 6743805800,
               "status": "passed"
             },
             "line": 5,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 2112004200,
+              "duration": 2078674900,
               "status": "passed"
             },
             "line": 6,
@@ -50,11 +50,11 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-15T08:56:04.225Z",
+        "start_timestamp": "2021-03-24T21:00:36.898Z",
         "line": 8,
         "name": "play my favourite music",
         "description": "",
-        "id": "@addemployeelist;play-my-favourite-music",
+        "id": "@play-my-favourite-song;play-my-favourite-music",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 6375001000,
+              "duration": 5662757500,
               "status": "passed"
             },
             "line": 10,
@@ -83,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 5720773800,
+              "duration": 6727069700,
               "status": "passed"
             },
             "line": 11,
@@ -95,7 +95,7 @@
           },
           {
             "result": {
-              "duration": 3377209900,
+              "duration": 2102597000,
               "status": "passed"
             },
             "line": 12,
@@ -108,9 +108,9 @@
         ]
       }
     ],
-    "name": "@AddEmployeelist",
+    "name": "@play my favourite song",
     "description": "",
-    "id": "@addemployeelist",
+    "id": "@play-my-favourite-song",
     "keyword": "Feature",
     "uri": "file:src/test/java/MobileAutomation/Features/playMusic.feature",
     "tags": []
