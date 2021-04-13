@@ -3,116 +3,105 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-03-24T21:00:16.640Z",
+        "start_timestamp": "2021-04-13T18:37:23.866Z",
         "line": 3,
-        "name": "navigate to albums",
+        "name": "navigate to add new user modal",
         "description": "",
-        "id": "@play-my-favourite-song;navigate-to-albums",
+        "id": "add-new-user;navigate-to-add-new-user-modal",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 11329287900,
+              "duration": 192998100,
               "status": "passed"
             },
             "line": 4,
-            "name": "I am on the uamp application",
+            "name": "I am on the wayautomation page",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iAmOnMyPhone()"
+              "location": "FrontendAutomation.Steps.AddNewUser.iAmOnTheWayautomationPage()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 6743805800,
+              "duration": 225997000,
               "status": "passed"
             },
             "line": 5,
-            "name": "I click on genres",
+            "name": "click the add new user button",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iClickOnGenres()"
+              "location": "FrontendAutomation.Steps.AddNewUser.clickTheAddNewUserButton()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2078674900,
+              "duration": 95004100,
               "status": "passed"
             },
             "line": 6,
-            "name": "then a list of available genres is displayed",
+            "name": "new modal window is displayed",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.thenAListOfAvailableGenresIsDisplayed()"
+              "location": "FrontendAutomation.Steps.AddNewUser.newModalWindowIsDisplayed()"
             },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2021-03-24T21:00:36.898Z",
+        "start_timestamp": "2021-04-13T18:37:24.426Z",
         "line": 8,
-        "name": "play my favourite music",
+        "name": "add new user",
         "description": "",
-        "id": "@play-my-favourite-song;play-my-favourite-music",
+        "id": "add-new-user;add-new-user",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
+              "duration": 3727003300,
               "status": "passed"
             },
             "line": 9,
-            "name": "I am on the genres menu",
+            "name": "I enter all the required info",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iAmOnTheGenresMenu()"
+              "location": "FrontendAutomation.Steps.AddNewUser.iEnterAllTheRequiredInfo()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 5662757500,
+              "duration": 96001800,
               "status": "passed"
             },
             "line": 10,
-            "name": "I click on jazz and blues",
+            "name": "I click on the Save button",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iClickOnJazzAndBlues()"
+              "location": "FrontendAutomation.Steps.AddNewUser.iClickOnTheSaveButton()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 6727069700,
+              "duration": 400955700,
               "status": "passed"
             },
             "line": 11,
-            "name": "I select A song",
+            "name": "The user is displayed on the grid",
             "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.iSelectASong()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2102597000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "the selected song must play",
-            "match": {
-              "location": "MobileAutomation.MobileStepDefinations.MyStepdefs.theSelectedSongMustPlay()"
+              "location": "FrontendAutomation.Steps.AddNewUser.theUserIsDisplayedOnTheGrid()"
             },
             "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "@play my favourite song",
+    "name": "Add New User",
     "description": "",
-    "id": "@play-my-favourite-song",
+    "id": "add-new-user",
     "keyword": "Feature",
-    "uri": "file:src/test/java/MobileAutomation/Features/playMusic.feature",
+    "uri": "file:src/test/java/FrontendAutomation/Features/AddUser.feature",
     "tags": []
   }
 ]

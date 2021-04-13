@@ -2,23 +2,34 @@ package Engine;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FunctionLibrary {
     WebDriver driver = null;
+    public static Logger logger;
     static AndroidDriver androidDriver;
-
 
     public Boolean setup()
     {
@@ -126,9 +137,7 @@ public class FunctionLibrary {
             }
 
         } catch (Exception ex) {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
+
 
         }
         return false;
@@ -169,12 +178,31 @@ public class FunctionLibrary {
         }
     }
 
-    public boolean enterTextbyID(String elementID, String text)
+    public boolean selectFromDropdownByName(String elementName, String text)
+    {
+        try{
+            waitforElementTobeDisplayed(elementName);
+            Select drpCountry = new Select( GlobalVariables.driver.findElement(By.name(elementName)));
+            drpCountry.selectByVisibleText(text);
+
+            return true;
+
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getStackTrace());
+            return false;
+        }
+    }
+
+
+    public boolean enterTextbyName(String elementName, String text)
     {
         try{
 
-            waitforElementTobeDisplayedByID(elementID);
-            var element = GlobalVariables.driver.findElement(By.id(elementID));
+            waitforElementTobeDisplayedByID(elementName);
+            var element = GlobalVariables.driver.findElement(By.name(elementName));
             element.clear();
             element.sendKeys(text);
             return true;
@@ -205,121 +233,24 @@ public class FunctionLibrary {
         }
     }
 
-    public boolean clickElementbyID(String elementID)
-    {
-        try{
-            waitforElementTobeDisplayedByID(elementID);
-            var element = GlobalVariables.driver.findElement(By.id(elementID));
-            element.click();
-            return true;
 
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
-            return false;
-        }
+    public void captureScreen(String tname) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) GlobalVariables.driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File target = new File(System.getProperty("user.dir") + "/Screenshots/" + tname + ".png");
+        FileUtils.copyFile(source, target);
+        System.out.println("Screenshot taken");
     }
 
-    public static void mobiClickElementByID(String element)
+    public void regex()
     {
-        try
-        {
-
-            MobileElement permision = (MobileElement) androidDriver.findElementById(element);
-
-            if(permision.isDisplayed() && permision.isEnabled())
-            {
-
-                permision.click();
-            }
-        }
-        catch(Exception ex)
-        {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
-
+        Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher("Visit W3Schools!");
+        boolean matchFound = matcher.find();
+        if(matchFound) {
+            System.out.println("Match found");
+        } else {
+            System.out.println("Match not found");
         }
     }
-
-    public static Boolean mobiClickElementByXpath(String element)
-    {
-        try
-        {
-            mobiWaitForElementToBeDisplayedByXpath(element);
-            Thread.sleep(2000);
-            MobileElement myElement = (MobileElement) androidDriver.findElementByXPath(element);
-
-            if(myElement.isDisplayed() && myElement.isEnabled())
-            {
-                myElement.click();
-            }
-            return true;
-        }
-        catch(Exception ex)
-        {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
-            return false;
-        }
-    }
-
-    public static Boolean mobiIsElementDisplayedByID(String myElement)
-    {
-        try
-        {
-
-            MobileElement element = (MobileElement) androidDriver.findElementById(myElement);
-            Thread.sleep(2000);
-            if(element.isDisplayed()) {
-                return true;
-            }
-
-        }
-        catch(Exception ex)
-        {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
-
-        }
-        return false;
-    }
-
-    public static void mobiWaitForElementToBeDisplayedByXpath(String myElement)
-    {
-        try
-        {
-            WebDriverWait wait = new WebDriverWait(androidDriver, 15);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(myElement)));// instead of id u can use cssSelector or xpath of ur element.
-
-            MobileElement element = (MobileElement) androidDriver.findElementByXPath(myElement);
-
-            if(!element.isDisplayed());
-            {
-                for(int i =0; i < 5; i++)
-                {
-                    Thread.sleep(2000);
-                    element = (MobileElement) androidDriver.findElementByXPath(myElement);
-
-                    if(element.isDisplayed())
-                    {
-                        break;
-                    }
-                }
-
-            }
-        }
-        catch(Exception ex)
-        {
-            System.out.println(ex.getCause());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getStackTrace());
-
-        }
-    }
-
 }

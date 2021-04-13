@@ -9,9 +9,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Properties;
 
 public class Engine {
 
+    Properties pro;
     public static String readFromExcel(String header) throws IOException {
 
         try {
@@ -89,4 +91,51 @@ public class Engine {
         }
         return "";
     }
+
+    public String getTestData(String dataHeader) {
+        try
+        {
+            ReadConfig conf = new ReadConfig();
+            String myData ="";
+            if(conf.getDataSource().equalsIgnoreCase("true"))
+            {
+                myData = readFromExcel(dataHeader);
+            }
+            else
+            {
+                ReadConfig();
+
+                myData = getConfigData(dataHeader);
+
+            }
+            return myData;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Exception is " + e.getMessage());
+        }
+        return "";
+    }
+
+    public void ReadConfig()
+    {
+        File src = new File("./Configuration/config.properties");
+
+        try {
+            FileInputStream fis = new FileInputStream(src);
+            pro = new Properties();
+            pro.load(fis);
+        } catch (Exception e) {
+            System.out.println("Exception is " + e.getMessage());
+        }
+    }
+
+    public String getConfigData(String header)
+    {
+        String firstName = pro.getProperty(header);
+        return firstName;
+    }
+
+
+
 }
